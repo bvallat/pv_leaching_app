@@ -1,8 +1,5 @@
 import streamlit as st
 import matplotlib.pyplot as plt
-import math
-import os
-import stat
 import pandas as pd
 
 #image = r'path'
@@ -42,7 +39,7 @@ def app():
         var_total_pb = input_pv_surface * input__pb_concentration * (input_prcent_leached/100)
         var_sorbed_pb = var_total_pb * (input_sorbtion_ratio/100)
         var_sorbed_pb = [var_sorbed_pb] * 8
-        var_surfaces_around_PV = [x + math.sqrt(input_pv_surface) for x in var_spreading_distances]
+        var_surfaces_around_PV = [x + (input_pv_surface**0.5) for x in var_spreading_distances]
         var_surfaces_around_PV = [x**2 for x in var_surfaces_around_PV]
         var_volumes_around_PV = [x * input_soil_depth for x in var_surfaces_around_PV]
         var_soil_mass_around_pv = [x * input_soil_density for x in var_volumes_around_PV]
