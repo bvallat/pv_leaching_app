@@ -35,7 +35,7 @@ def app():
     - The lead is distributed only within the boundaries delimited by the user.
     
     Please note that this model is designed to provide a general idea of potential 
-    lead concentrations and may not reflect the exact values in a real-world scenario.
+    lead concentrations and does not reflect the exact values in a real-world scenario.
     """)
 
     
