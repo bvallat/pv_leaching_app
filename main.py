@@ -17,7 +17,35 @@ def app():
     with st.form(key='pannel form'):
         st.subheader('Lead content in panel')
         input_pv_surface = float(st.number_input(label='PV surface [m2]', value = 10))
-        input__pb_concentration = float(st.number_input(label='Pb concentration [g/m2]',value=0.9))
+        
+        #Concentration
+        input_user_pb_concentration = float(st.number_input(label='Pb concentration [g/m2]',value=0.0))
+        st.write("---") 
+
+        st.text(f'If unknown, you can compute concentration from thickness and material type')
+        input_thickness = st.number_input('Thickness of perovskite layer [nm]',value = 200)
+        input_thickness = input_thickness*(10**-7) #convert in cm
+
+        # Mateiral list and value
+        material_dict = {
+            'MAPbI3 (1.36 gPb/cm3)': 1.37,
+            'FAPbI3 (1.26 gPb/cm3)': 1.26, 
+            'CsPbI3 (1.15 gPb/cm3)': 1.15
+        }
+        input_list_materials = ['MAPbI3 (1.36 gPb/cm3)','FAPbI3 (1.26 gPb/cm3)', 'CsPbI3 (1.15 gPb/cm3)']
+        input_material = st.selectbox('Material', input_list_materials)
+
+        submit_button_concentration = st.form_submit_button(label='Get concentration')
+
+        if submit_button_concentration :
+            input_pb_concentration_mat = input_thickness*material_dict[input_material]*100*100
+            st.text(f'Calculated pb concentration is : ' + str(round(input_pb_concentration_mat,3))+' g/m2')
+            st.text(f" ! Don't forget to copy it the in Pb concentration !")
+
+        st.write("---") 
+
+        input_pb_concentration = input_user_pb_concentration
+        
         input_prcent_leached = float(st.number_input(label='Pb leaching ratio [0-100]',value=100))
         st.write("---") 
         #---------------------------------
