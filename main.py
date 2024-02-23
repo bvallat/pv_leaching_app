@@ -75,11 +75,13 @@ def app():
         "Clay": 1330
         }
 
+        soil_data_sorted = dict(sorted(soil_data.items(), key=lambda item: item[1], reverse=True))
+
         # Convert in DataFrame
-        df = pd.DataFrame(list(soil_data.items()), columns=['Soil Type', 'Density (kg/m^3)'])
+        df_sorted = pd.DataFrame(list(soil_data_sorted.items()), columns=['Soil Type', 'Density (kg/m^3)'])
         
         # Display DataFrame in Streamlit
-        st.dataframe(df)
+        st.dataframe(df_sorted)
 
 
 
