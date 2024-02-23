@@ -2,7 +2,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import pandas as pd
 
-#image = r'path'
+image = r'scheme.png'
 
 
 def app():
@@ -22,6 +22,7 @@ def app():
         st.write("---") 
         #---------------------------------
         st.subheader('Volume/mass of soil considered')
+        st.image(image)
         input_distance_around_pv = float(st.number_input(label='Max Pb spreading distance around PV [m]',value=0.5))
         input_soil_depth = float(st.number_input(label='Max soil depth [m]',value=0.5))
         input_soil_density = float(st.number_input(label='Soil density [kg/m3]',value=3000))
