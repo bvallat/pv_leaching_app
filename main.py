@@ -13,7 +13,7 @@ def app():
     st.title('PerPV lead leaching tool')
     st.text("""
     This application allows you to calculate the average concentration of lead (Pb) 
-    that could be absorbed by the soil in the event of a lead leak from a perovskite 
+    that could be sorbed by the soil in the event of a lead leak from a perovskite 
     solar panel.
     
     It uses the total mass of lead contained in the system, taking into account the 
