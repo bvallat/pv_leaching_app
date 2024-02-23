@@ -39,7 +39,7 @@ def app():
 
         if submit_button_concentration :
             input_pb_concentration_mat = input_thickness*material_dict[input_material]*100*100
-            st.text(f'Calculated pb concentration is : ' + str(round(input_pb_concentration_mat,3))+' g/m2')
+            st.text(f'Calculated pb concentration is : ' + str(round(input_pb_concentration_mat,2))+' g/m2')
             st.text(f" ! Don't forget to copy it the in Pb concentration !")
 
         st.write("---") 
