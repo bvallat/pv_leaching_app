@@ -73,9 +73,9 @@ def app():
         var_sorbed_pb = [var_sorbed_pb] * 8
         var_surfaces_around_PV = [x + (input_pv_surface**0.5) for x in var_spreading_distances]
         var_surfaces_around_PV = [x**2 for x in var_surfaces_around_PV]
-        var_surfaces_around_PV = var_surfaces_around_PV - input_pv_surface
+        var_surfaces_around_PV = [x - input_pv_surface   for x in var_surfaces_around_PV]
         if input_checkbox_surface_bellow_pv == True :
-            var_surfaces_around_PV = var_surfaces_around_PV + input_pv_surface
+            var_surfaces_around_PV = [x - input_pv_surface   for x in var_surfaces_around_PV]
         var_volumes_around_PV = [x * input_soil_depth for x in var_surfaces_around_PV]
         var_soil_mass_around_pv = [x * input_soil_density for x in var_volumes_around_PV]
         #var_concentrations_per_vol = (var_sorbed_pb / var_volumes_around_PV )*input_sorbtion_ratio
