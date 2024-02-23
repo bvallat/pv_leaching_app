@@ -58,7 +58,7 @@ def app():
         input_checkbox_surface_bellow_pv = st.checkbox(label = "Include volume bellow PV")
 
         #Density
-        input_soil_density = float(st.number_input(label='Soil density [kg/m3]',value=1300))
+        input_soil_density = float(st.number_input(label='Soil density [kg/m3]',value=1408))
         st.text(f"If needed, bellow are shown typical soils densities")
         soil_data = {
         "Sand": 1430,
