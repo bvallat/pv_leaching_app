@@ -59,7 +59,8 @@ def app():
 
         #Density
         input_soil_density = float(st.number_input(label='Soil density [kg/m3]',value=1408))
-        st.text(f"If needed, bellow are shown typical soils densities")
+        st.text(f"If needed, bellow are shown typical soils densities (average is 1408 kg/m3")
+        
         soil_data = {
         "Sand": 1430,
         "Loamy Sand": 1460,
@@ -78,10 +79,10 @@ def app():
         soil_data_sorted = dict(sorted(soil_data.items(), key=lambda item: item[1], reverse=True))
 
         # Convert in DataFrame
-        df_sorted = pd.DataFrame(list(soil_data_sorted.items()), columns=['Soil Type', 'Density (kg/m^3)'])
+        df_sorted = pd.DataFrame(list(soil_data_sorted.items()), columns=['Soil Type', 'Density (kg/m3)'])
         
         # chnage the format to avoid the comma for thousands
-        df_sorted['Density (kg/m^3)'] = df_sorted['Density (kg/m^3)'].apply(lambda x: '{0:.0f}'.format(x))
+        df_sorted['Density (kg/m3)'] = df_sorted['Density (kg/m3)'].apply(lambda x: '{0:.0f}'.format(x))
         
         # Display DataFrame in Streamlit
         st.dataframe(df_sorted)
