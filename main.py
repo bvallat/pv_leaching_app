@@ -13,25 +13,29 @@ def app():
     st.title('PerPV lead leaching tool')
     st.text("""
     This application allows you to calculate the average concentration of lead (Pb) 
-    that could be absorbed by the soil in the event of a lead leak from a perovskite solar panel.
+    that could be absorbed by the soil in the event of a lead leak from a perovskite 
+    solar panel.
     
-    It uses the total mass of lead contained in the system, taking into account the surface area and lead density of the panel, 
-    as well as the percentage of lead released as indicated by the user.
+    It uses the total mass of lead contained in the system, taking into account the 
+    surface area and lead density of the panel, as well as the percentage of lead 
+    released as indicated by the user.
     
-    The application then divides this mass of lead by a certain volume of soil, 
-    which depends on the diffusion area and the depth to which the user estimates the lead will leach. 
-    It takes into account the percentage of lead absorbed by the soil and returns a mass concentration of lead in the soil, 
-    calculated based on these parameters and the density of the soil type chosen by the user.
+    The application then divides this mass of lead by a certain volume of soil, which 
+    depends on the diffusion area and the depth to which the user estimates the lead 
+    will leach. It takes into account the percentage of lead absorbed by the soil and 
+    returns a mass concentration of lead in the soil, calculated based on these 
+    parameters and the density of the soil type chosen by the user.
     
-    This is a simplified model that does not take into account the dynamics of solute transport. Instead, 
+    This is a simplified model that does not take into account the dynamics of solute 
+    transport
     
-    it serves to provide orders of magnitude with the following assumptions:
+    Instead, it serves to provide orders of magnitude with the following assumptions:
     
     - The lead is distributed perfectly homogeneously in the considered volume of soil.
     - The lead is distributed only within the boundaries delimited by the user.
     
-    Please note that this model is designed to provide a general idea of potential lead concentrations 
-    and may not reflect the exact values in a real-world scenario.
+    Please note that this model is designed to provide a general idea of potential 
+    lead concentrations and may not reflect the exact values in a real-world scenario.
     """)
 
     
