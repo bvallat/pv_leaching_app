@@ -56,7 +56,35 @@ def app():
         input_distance_around_pv = float(st.number_input(label='Max Pb spreading distance around PV (d) [m]',value=0.5))
         input_soil_depth = float(st.number_input(label='Max soil depth (z) [m]',value=0.5))
         input_checkbox_surface_bellow_pv = st.checkbox(label = "Include volume bellow PV")
+
+        #Density
         input_soil_density = float(st.number_input(label='Soil density [kg/m3]',value=1300))
+
+        soil_data = {
+        "Sand": 1430,
+        "Loamy Sand": 1460,
+        "Sandy Loam": 1460,
+        "Loam": 1430,
+        "Silty Loam": 1380,
+        "Silt": 1380,
+        "Sandy Clayey Loam": 1500,
+        "Clayey Loam": 1390,
+        "Silty Clayey Loam": 1300,
+        "Silty Clay": 1260,
+        "Sandy Clay": 1470,
+        "Clay": 1330
+        }
+
+        # Convert in DataFrame
+        df = pd.DataFrame(list(soil_data.items()), columns=['Soil Type', 'Density (kg/m^3)'])
+        
+        # Display DataFrame in Streamlit
+        st.dataframe(df)
+
+
+
+
+        
         input_sorbtion_ratio = float(st.number_input(label='Soil sorption ratio [0-100]',value=100))
         submit_button = st.form_submit_button(label='Compute')
 
