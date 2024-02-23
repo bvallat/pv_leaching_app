@@ -82,7 +82,7 @@ def app():
         st.subheader('Volume/mass of soil considered')
         st.image(image,use_column_width=True)
         input_distance_around_pv = float(st.number_input(label='Max Pb spreading distance around PV (d) [m]',value=0.5))
-        input_soil_depth = float(st.number_input(label='Max soil depth (z) [m]',value=0.5))
+        input_soil_depth = float(st.number_input(label='Max soil depth (z) [m]',value=0.2))
         input_checkbox_surface_bellow_pv = st.checkbox(label = "Include volume bellow PV")
 
         #Density
