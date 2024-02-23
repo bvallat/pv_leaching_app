@@ -23,8 +23,8 @@ def app():
         #---------------------------------
         st.subheader('Volume/mass of soil considered')
         st.image(image)
-        input_distance_around_pv = float(st.number_input(label='Max Pb spreading distance around PV [m]',value=0.5))
-        input_soil_depth = float(st.number_input(label='Max soil depth [m]',value=0.5))
+        input_distance_around_pv = float(st.number_input(label='Max Pb spreading distance around PV (d) [m]',value=0.5))
+        input_soil_depth = float(st.number_input(label='Max soil depth (z) [m]',value=0.5))
         input_soil_density = float(st.number_input(label='Soil density [kg/m3]',value=3000))
         input_sorbtion_ratio = float(st.number_input(label='Soil sorption ratio [0-100]',value=100))
         submit_button = st.form_submit_button(label='Compute')
