@@ -10,7 +10,7 @@ def app():
 
     st.image(header, use_column_width=True)
     #Title
-    st.title('Perovskite leaching tool')
+    st.title('PerPV lead leaching tool')
 
     #####################################
 
