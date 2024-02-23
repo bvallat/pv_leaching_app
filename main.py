@@ -65,7 +65,7 @@ def app():
 
 
     #Compute all the necessary variables
-        var_total_pb = input_pv_surface * input__pb_concentration * (input_prcent_leached/100)
+        var_total_pb = input_pv_surface * input_pb_concentration * (input_prcent_leached/100)
         var_sorbed_pb = var_total_pb * (input_sorbtion_ratio/100)
         var_sorbed_pb = [var_sorbed_pb] * 8
         var_surfaces_around_PV = [x + (input_pv_surface**0.5) for x in var_spreading_distances]
