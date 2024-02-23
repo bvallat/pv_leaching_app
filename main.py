@@ -80,6 +80,9 @@ def app():
         # Convert in DataFrame
         df_sorted = pd.DataFrame(list(soil_data_sorted.items()), columns=['Soil Type', 'Density (kg/m^3)'])
         
+        # chnage the format to avoid the comma for thousands
+        df_sorted['Density (kg/m^3)'] = df_sorted['Density (kg/m^3)'].apply(lambda x: '{0:.0f}'.format(x))
+        
         # Display DataFrame in Streamlit
         st.dataframe(df_sorted)
 
