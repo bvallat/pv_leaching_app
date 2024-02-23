@@ -54,6 +54,7 @@ def app():
         st.subheader('Volume/mass of soil considered')
         st.image(image,use_column_width=True)
         input_distance_around_pv = float(st.number_input(label='Max Pb spreading distance around PV (d) [m]',value=0.5))
+        input_checkbox_surface_bellow_pv = st.checkbox(label = "Include surface bellow PV")
         input_soil_depth = float(st.number_input(label='Max soil depth (z) [m]',value=0.5))
         input_soil_density = float(st.number_input(label='Soil density [kg/m3]',value=3000))
         input_sorbtion_ratio = float(st.number_input(label='Soil sorption ratio [0-100]',value=100))
@@ -72,6 +73,9 @@ def app():
         var_sorbed_pb = [var_sorbed_pb] * 8
         var_surfaces_around_PV = [x + (input_pv_surface**0.5) for x in var_spreading_distances]
         var_surfaces_around_PV = [x**2 for x in var_surfaces_around_PV]
+        var_surfaces_around_PV = var_surfaces_around_PV - input_pv_surface
+        if input_checkbox_surface_bellow_pv == True :
+            var_surfaces_around_PV = var_surfaces_around_PV + input_pv_surface
         var_volumes_around_PV = [x * input_soil_depth for x in var_surfaces_around_PV]
         var_soil_mass_around_pv = [x * input_soil_density for x in var_volumes_around_PV]
         #var_concentrations_per_vol = (var_sorbed_pb / var_volumes_around_PV )*input_sorbtion_ratio
