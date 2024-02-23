@@ -10,7 +10,7 @@ def app():
 
     st.image(header, use_column_width=True)
     #Title
-    st.title('PerPV lead leaching tool')
+    st.title('PerPV lead leaching tool (alpha version ) ')
     st.text("""
     This application allows you to calculate the average concentration of lead (Pb) 
     that could be sorbed by the soil in the event of a lead leak from a perovskite 
