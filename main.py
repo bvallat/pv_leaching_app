@@ -3,10 +3,12 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 image = r'scheme.png'
+header = r'header.png'
 
 
 def app():
 
+    st.image(header, use_column_width=True)
     #Title
     st.title('Perovskite leaching tool')
 
