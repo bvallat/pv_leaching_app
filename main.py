@@ -59,7 +59,7 @@ def app():
 
         #Density
         input_soil_density = float(st.number_input(label='Soil density [kg/m3]',value=1408))
-        st.text(f"If needed, bellow are shown typical soils densities (average is 1408 kg/m3")
+        st.text(f"If needed, bellow are shown typical soils densities (average is 1408 kg/m3)")
         
         soil_data = {
         "Sand": 1430,
