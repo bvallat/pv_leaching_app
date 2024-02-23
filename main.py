@@ -38,7 +38,7 @@ def app():
     lead concentrations and does not reflect the exact values in a real-world scenario.
     """)
 
-    
+    st.write("---") 
 
     #####################################
 
