@@ -10,7 +10,7 @@ def app():
 
     st.image(header, use_column_width=True)
     #Title
-    st.title('PerPV lead leaching tool (alpha version ) ')
+    st.title('PerPV lead leaching tool v0.2 (alpha version ) ')
     st.text("""
     This application allows you to calculate the average concentration of lead (Pb) 
     that could be sorbed by the soil in the event of a lead leak from a perovskite 
@@ -76,7 +76,7 @@ def app():
 
         input_pb_concentration = input_user_pb_concentration
         
-        input_prcent_leached = float(st.number_input(label='Pb leaching ratio [0-100]',value=100))
+        input_prcent_leached = float(st.number_input(label='Share of Pb leached [%]',value=100))
         st.write("---") 
         #---------------------------------
         st.subheader('Volume/mass of soil considered')
@@ -119,7 +119,7 @@ def app():
 
 
         
-        input_sorbtion_ratio = float(st.number_input(label='Soil sorption ratio [0-100]',value=100))
+        input_sorbtion_ratio = float(st.number_input(label='Share of Pb sorbed in soil [%]',value=100))
         submit_button = st.form_submit_button(label='Compute')
 
 
