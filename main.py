@@ -172,7 +172,7 @@ def app():
         plt.ylabel('Increase in Pb concentration in soil (mg/kg)')
         recommended_value = 83
         foen_value = 300
-        plt.axhline(y=recommended_value, color='y', linestyle='--', label=f'SCAHT recommended value')
+        plt.axhline(y=recommended_value, color='r', linestyle='--', label=f'SCAHT recommended value')
         #plt.axhline(y=foen_value, color='r', linestyle='--', label=f'FOEN max limit')
         plt.grid(True)
         plt.show()
