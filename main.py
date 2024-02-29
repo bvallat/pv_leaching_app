@@ -49,11 +49,11 @@ def app():
         input_pv_surface = float(st.number_input(label='PV surface [m2]', value = 10))
         
         #Concentration
-        input_user_pb_concentration = float(st.number_input(label='Pb concentration [g/m2]',value=0.9,format="%.3f",step=0.001))
+        input_user_pb_concentration = float(st.number_input(label='Pb concentration [g/m2] - max concentration is 3.000g/m2',value=0.9,format="%.3f",step=0.001, min_value=0.001, max_value=3)
         st.write("---") 
 
         st.text(f'If unknown, you can compute concentration from thickness and material type')
-        input_thickness = st.number_input('Thickness of perovskite layer [nm]',value = 200)
+        input_thickness = st.number_input('Thickness of perovskite layer [nm] - maximum value is 1000nm',value = 200, min_value=1, max_value=1000)
         input_thickness = input_thickness*(10**-7) #convert in cm
 
         # Mateiral list and value
@@ -167,12 +167,12 @@ def app():
         # Create a plot
         plt.figure(figsize=(10, 6))
         plt.plot(var_spreading_distances, var_concentrations_per_mass, marker='o')
-        plt.title('Pb concentration in fonction of spreading distance with ' + str(input_soil_depth) + ' m depth')
+        plt.title('Increase in Pb concentration in soil in fonction of spreading distance with ' + str(input_soil_depth) + ' m depth')
         plt.xlabel('Spreading distance (m)')
-        plt.ylabel('Pb concentration (mg/kg)')
+        plt.ylabel('Increase in Pb concentration in soil (mg/kg)')
         recommended_value = 83
         foen_value = 300
-        #plt.axhline(y=recommended_value, color='y', linestyle='--', label=f'SCAHT recommended value')
+        plt.axhline(y=recommended_value, color='y', linestyle='--', label=f'SCAHT recommended value')
         #plt.axhline(y=foen_value, color='r', linestyle='--', label=f'FOEN max limit')
         plt.grid(True)
         plt.show()
