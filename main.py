@@ -76,7 +76,7 @@ def app():
 
         input_pb_concentration = input_user_pb_concentration
         
-        input_prcent_leached = float(st.number_input(label='Share of Pb leached [%]',value=100))
+        input_prcent_leached = float(st.number_input(label='Share of Pb leached [%]',value=100, min_value=1, max_value=100))
         st.write("---") 
         #---------------------------------
         st.subheader('Volume/mass of soil considered')
@@ -119,7 +119,7 @@ def app():
 
 
         
-        input_sorbtion_ratio = float(st.number_input(label='Share of Pb sorbed in soil [%]',value=100))
+        input_sorbtion_ratio = float(st.number_input(label='Share of Pb sorbed in soil [%]',value=100, min_value=1, max_value=100))
         submit_button = st.form_submit_button(label='Compute')
 
 
