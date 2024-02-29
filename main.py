@@ -49,7 +49,7 @@ def app():
         input_pv_surface = float(st.number_input(label='PV surface [m2]', value = 10))
         
         #Concentration
-        input_user_pb_concentration = float(st.number_input(label='Pb concentration [g/m2] - max concentration is 3.000g/m2',value=0.9,format="%.3f",step=0.001, min_value=0.001, max_value=3))
+        input_user_pb_concentration = float(st.number_input(label='Pb concentration [g/m2] - max concentration is 3.000g/m2',value=0.9,format="%.3f",step=0.001, min_value=0.010, max_value=3))
         st.write("---") 
 
         st.text(f'If unknown, you can compute concentration from thickness and material type')
